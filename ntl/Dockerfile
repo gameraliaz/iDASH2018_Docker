@@ -16,7 +16,7 @@ COPY ntl-10.3.0.tar.gz /ntl-10.3.0.tar.gz
 # Extract and build the NTL library
 RUN tar -xzf /ntl-10.3.0.tar.gz -C / \
     && cd /ntl-10.3.0/src \
-    && ./configure ENV NTL_THREAD_BOOST=on \  
+    && ./configure NTL_THREAD_BOOST=on \  
     && make \
     && make check \
     && make install 
