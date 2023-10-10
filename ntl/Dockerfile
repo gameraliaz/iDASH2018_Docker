@@ -1,5 +1,5 @@
 # Use a base image of your choice (e.g., Ubuntu)
-FROM ubuntu:17.04
+FROM ubuntu:latest
 
 # Install necessary dependencies
 RUN apt-get update && apt-get install -y \
@@ -8,9 +8,7 @@ RUN apt-get update && apt-get install -y \
     libmpfr-dev \
     libmpc-dev \
     make \
-    gcc \
-    libssl-dev=1.0.2g-1ubuntu11.2 \
-    m4
+    gcc 
 
 # Copy the NTL source tarball to the container
 COPY ntl-10.3.0.tar.gz /ntl-10.3.0.tar.gz
