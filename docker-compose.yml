@@ -1,0 +1,15 @@
+version: '3'
+services: 
+  ntl: 
+    build: ./ntl
+    image: ntl:latest
+  gmp: 
+    build: ./gmp
+    image: gmp:latest
+    depends_on: 
+                - ntl
+  idash:
+    build: ./idash
+    image: idash:latest
+    depends_on: 
+                - gmp
